@@ -2,6 +2,7 @@ extern mod ncurses;
 
 fn main() {
     use ncurses::*;
+    use std::{str,libc};
 
     unsafe {
         // raw(), cbreak(): turn off terminal buffering.  raw() passes
