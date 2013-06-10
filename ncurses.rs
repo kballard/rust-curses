@@ -35,8 +35,8 @@ pub extern {
     unsafe fn addch (_:chtype) -> c_int;
     unsafe fn addchnstr (_:*chtype, _:c_int) -> c_int;
     unsafe fn addchstr (_:*chtype) -> c_int;
-    unsafe fn addnstr (_:*char, _:c_int) -> c_int;
-    unsafe fn addstr (_:*char) -> c_int;
+    unsafe fn addnstr (_:char_p, _:c_int) -> c_int;
+    unsafe fn addstr (_:char_p) -> c_int;
     unsafe fn attroff (_:NCURSES_ATTR_T) -> c_int;
     unsafe fn attron (_:NCURSES_ATTR_T) -> c_int;
     unsafe fn attrset (_:NCURSES_ATTR_T) -> c_int;
@@ -446,14 +446,14 @@ unsafe fn setsyx(y:&mut c_int,x:&mut c_int) {
 //#define gettmode()
 
 /* colors */
-static COLOR_BLACK : c_int =	0;
-static COLOR_RED : c_int =	1;
-static COLOR_GREEN : c_int =    2;
-static COLOR_YELLOW : c_int =    3;
-static COLOR_BLUE : c_int =      4;
-static COLOR_MAGENTA : c_int =   5;
-static COLOR_CYAN : c_int =      6;
-static COLOR_WHITE : c_int =      7;
+static COLOR_BLACK : c_short =   0;
+static COLOR_RED : c_short =     1;
+static COLOR_GREEN : c_short =   2;
+static COLOR_YELLOW : c_short =  3;
+static COLOR_BLUE : c_short =    4;
+static COLOR_MAGENTA : c_short = 5;
+static COLOR_CYAN : c_short =    6;
+static COLOR_WHITE : c_short =   7;
 
 /* line graphics */
 
