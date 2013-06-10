@@ -1,5 +1,7 @@
 extern mod ncurses;
 
+use std::str;
+
 fn main() {
     use ncurses::{initscr,printw,refresh,getch,endwin};
 
