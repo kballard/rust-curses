@@ -26,11 +26,11 @@ pub extern {
     static stdscr: WINDOW_p;
     static ttytype: *c_char;
     static COLORS : c_int;
-    static COLOR_PAIRS : int;
-    static COLS : int;
-    static ESCDELAY : int;
-    static LINES : int;
-    static TABSIZE : int;
+    static COLOR_PAIRS : c_int;
+    static COLS : c_int;
+    static ESCDELAY : c_int;
+    static LINES : c_int;
+    static TABSIZE : c_int;
 
     unsafe fn addch (_:chtype) -> c_int;
     unsafe fn addchnstr (_:*chtype, _:c_int) -> c_int;
