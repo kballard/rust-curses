@@ -408,11 +408,17 @@ pub fn A_VERTICAL() -> c_int	{ NCURSES_BITS(1u,22)  as c_int }
  * These pseudo functions are always implemented as macros:
  */
 
+#[fixed_stack_segment] #[inline(never)]
 pub unsafe fn getyx(win:WINDOW_p,y: &mut c_int,x: &mut c_int) { *y = getcury(win); *x = getcurx(win); }
+#[fixed_stack_segment] #[inline(never)]
 pub unsafe fn getbegyx(win:WINDOW_p,y: &mut c_int, x: &mut c_int) { *y = getbegy(win); *x = getbegx(win) }
+#[fixed_stack_segment] #[inline(never)]
 pub unsafe fn getmaxyx(win:WINDOW_p,y: &mut c_int, x: &mut c_int) { *y = getmaxy(win); *x = getmaxx(win) }
+#[fixed_stack_segment] #[inline(never)]
 pub unsafe fn getparyx(win:WINDOW_p,y: &mut c_int, x: &mut c_int) { *y = getpary(win); *x = getparx(win) }
 
+#[fixed_stack_segment]
+#[inline(never)]
 pub unsafe fn getsyx(y:&mut c_int, x:&mut c_int) {
     if newscr != (0 as WINDOW_p) {
         if is_leaveok(newscr) {
@@ -425,6 +431,8 @@ pub unsafe fn getsyx(y:&mut c_int, x:&mut c_int) {
 }
 
 
+#[fixed_stack_segment]
+#[inline(never)]
 pub unsafe fn setsyx(y:&mut c_int,x:&mut c_int) {
     if newscr != (0 as WINDOW_p) {
         if *y == -1 && *x == -1 {
