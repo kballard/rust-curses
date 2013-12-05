@@ -19,7 +19,7 @@ type va_list = *u8;
 struct WINDOW;
 struct SCREEN;
 
-#[link_args = "-lncurses"]
+#[link(name = "ncurses")]
 extern {
     pub static curscr: WINDOW_p;
     pub static newscr: WINDOW_p;
