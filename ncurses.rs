@@ -49,7 +49,7 @@ extern {
     pub fn bkgd (_:chtype) -> c_int;
     pub fn bkgdset (_:chtype);
     pub fn border (_:chtype,_:chtype,_:chtype,_:chtype,_:chtype,_:chtype,_:chtype,_:chtype) -> c_int;
-    pub fn box (_:WINDOW_p, _:chtype, _:chtype) -> c_int;
+    pub fn box_ (_:WINDOW_p, _:chtype, _:chtype) -> c_int;
     pub fn can_change_color () -> bool;
     pub fn cbreak () -> c_int;
     pub fn chgat (_:c_int, _:attr_t, _:c_short, _:void_p) -> c_int;
