@@ -1,4 +1,4 @@
-#[link(name="ncurses",package_id="ncurses",vers="5.7")];
+#[crate_id="ncurses#5.7"];
 use std::libc::{c_char, c_int, c_short, c_uchar, c_uint, c_void,FILE};
 
 pub type chtype = c_uint;
